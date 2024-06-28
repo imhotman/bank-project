@@ -2,6 +2,8 @@ const router = require("express").Router();
 const setup = require("../db_setup");
 const sha = require("sha256");
 
+
+
 router.get("/", async (req, res) => {
     console.log("GET / 처리 시작 ");
   try {
@@ -117,5 +119,10 @@ router.post("/account/save", async (req, res) => {
         res.status(500).send();
       });
   });
+
+const pw_ex = (text) => {
+    const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+    return 
+}
 
 module.exports = router;

@@ -12,7 +12,7 @@ const setup = async () => {
     try {
         //몽고DB에 접속
         const mongoDbUrl = `mongodb+srv://admin:1234@cluster0.nlg2a7w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-    const mongoConn = await MongoClient.connect(mongoDbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+    const mongoConn = await MongoClient.connect(mongoDbUrl/*, { useNewUrlParser: true, useUnifiedTopology: true }*/);
     mongodb = mongoConn.db("myboard");
     console.log("몽고DB 접속 성공");
 
