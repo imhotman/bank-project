@@ -48,7 +48,7 @@ router.post("/account/login", async (req, res) => {
               req.session.user = req.body;
               //console.log(req.session.user);
               res.cookie("uid", req.body.userid);
-              res.render("index.ejs");
+              res.render("index.ejs", {data: {id: req.body.userid}});
             } else {
                 //res.send("login fail");
                 //res.render("login.ejs");
@@ -120,9 +120,5 @@ router.post("/account/save", async (req, res) => {
       });
   });
 
-const pw_ex = (text) => {
-    const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
-    return 
-}
 
 module.exports = router;
